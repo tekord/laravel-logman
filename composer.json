@@ -1,7 +1,7 @@
 {
   "name": "tekord/laravel-logman",
-  "description": "",
-  "keywords": [],
+  "description": "Adds manageable container of context data for logs.",
+  "keywords": ["laravel", "log", "logging", "logger"],
   "license": "MIT",
   "authors": [
     {
@@ -10,6 +10,7 @@
     }
   ],
   "require": {
+    "php": ">=7.1",
     "illuminate/support": "5.5.*|5.6.*"
   },
   "require-dev": {
