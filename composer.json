@@ -23,7 +23,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tekord\\Logman\\Tests": "tests/"
+      "Tekord\\Logman\\Tests\\": "tests/"
     }
   },
   "extra": {
