@@ -2,6 +2,10 @@
 
 This package allows you to add global context data for logging in easy way.
 
+## Status
+
+This package is currently under development. Some parts may change significantly.
+
 ## Installation
 
 Add the `tekord/laravel-logman` package in your composer.json and update your dependencies or add it via command 
@@ -78,7 +82,7 @@ protected function context() {
 }
 ```
 
-Now if something goes wrong you will see helpful request information in log files.
+Now if something goes wrong you will see helpful request information in error log files.
 
 ### Collect context data before controller's action execution
 
