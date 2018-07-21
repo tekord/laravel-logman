@@ -15,10 +15,10 @@ line:
 $ composer require tekord/laravel-logman
 ```
 
-If you are using Laravel < 5.5, you also need to add `Tekord\Logomania\ServiceProvider` to your `config/app.php` providers array:
+If you are using Laravel < 5.5, you also need to add `Tekord\Logman\ServiceProvider` to your `config/app.php` providers array:
 
 ```
-\Tekord\Logomania\ServiceProvider::class,
+\Tekord\Logman\ServiceProvider::class,
 ```
 
 ...
@@ -100,3 +100,9 @@ public function callAction($method, $parameters) {
 	return parent::callAction($method, $parameters);
 }
 ```
+
+### Store context data from Logman for any log
+
+Sometimes you want to put context data into each log record.
+
+TBD
