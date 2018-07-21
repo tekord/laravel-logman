@@ -1,5 +1,5 @@
 {
-  "name": "tekord/laravel-logomania",
+  "name": "tekord/laravel-logman",
   "description": "",
   "keywords": [],
   "license": "MIT",
@@ -18,17 +18,21 @@
   },
   "autoload": {
     "psr-4": {
+      "Tekord\\Logman\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
+      "Tekord\\Logman\\Tests": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "aliases": {
+        "Logman": "Tekord\\Logman\\Facades\\Logman"
       },
       "providers": [
+        "Tekord\\Logman\\ServiceProvider"
       ]
     }
   }
