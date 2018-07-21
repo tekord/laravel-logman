@@ -44,7 +44,7 @@ class Logman {
 			$this->context[$key] = $value;
 		}
 		else {
-			if (!isset($this->context[$key]))
+			if (!array_key_exists($key, $this->context))
 				$this->context[$key] = $value;
 		}
 	}
