@@ -3,7 +3,7 @@
 namespace Tekord\Logman\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Tekord\Logman\Logman;
+use Tekord\Logman\ContextContainer;
 
 /**
  * @author Cyrill Tekord
@@ -11,7 +11,7 @@ use Tekord\Logman\Logman;
 class LogmanTest extends TestCase {
 
 	public function testPut() {
-		$instance = new Logman();
+		$instance = new ContextContainer();
 
 		$instance->put('one', 1);
 		$instance->put('two', 2);
@@ -25,7 +25,7 @@ class LogmanTest extends TestCase {
 	}
 
 	public function testPutWithOverwritingFlag() {
-		$instance = new Logman();
+		$instance = new ContextContainer();
 
 		$instance->put('one', 1);
 		$instance->put('one', 50, false);
@@ -48,7 +48,7 @@ class LogmanTest extends TestCase {
 	}
 
 	public function testPutIfPresented() {
-		$instance = new Logman();
+		$instance = new ContextContainer();
 
 		$instance->putIfPresented('one', 1);
 		$instance->putIfPresented('two', 2);

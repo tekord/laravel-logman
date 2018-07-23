@@ -5,7 +5,7 @@ namespace Tekord\Logman;
 /**
  * @author Cyrill Tekord
  */
-class Logman {
+class ContextContainer {
 	/**
 	 * @var array stores accumulated context records.
 	 */
