@@ -29,10 +29,6 @@ and add `Tekord\Logman\Facades\Logman` to 'aliases' array:
 ]
 ```
 
-...
-
-TBD
-
 ## Usage examples
 
 ### Collect context data before request handling
