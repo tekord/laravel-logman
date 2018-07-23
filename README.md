@@ -2,10 +2,6 @@
 
 This package allows you to add global context data for logging in easy way.
 
-## Status
-
-This package is currently under development. Some parts may change significantly.
-
 ## Installation
 
 Add the `tekord/laravel-logman` package in your composer.json and update your dependencies or add it via command 
@@ -17,8 +13,20 @@ $ composer require tekord/laravel-logman
 
 If you are using Laravel < 5.5, you also need to add `Tekord\Logman\ServiceProvider` to your `config/app.php` providers array:
 
+```php
+'providers' => [
+	...
+	\Tekord\Logman\ServiceProvider::class,
+]
 ```
-\Tekord\Logman\ServiceProvider::class,
+
+and add `Tekord\Logman\Facades\Logman` to 'aliases' array:
+
+```
+'aliases' => [
+	...
+	'Logman' => \Tekord\Logman\Facades\Logman::class,
+]
 ```
 
 ...
@@ -29,7 +37,7 @@ TBD
 
 ### Collect context data before request handling
 
-Suppose we want to log incoming request information like request method, URI, user agent and referer. Add the following middleware to your App\Http\Middleware namespace:
+Suppose we want to add incoming request information like request method, URI, user agent and referer to error log. Add the following middleware to your App\Http\Middleware namespace:
 
 ```php
 <?php
@@ -71,9 +79,9 @@ Go to \App\Exceptions\Handler class and override the `context` method like this:
 ```php
 protected function context() {
 	try {
-        $context = \Tekord\Logman\Facades\Logman::getContextWith([
-            // put additional custom context records here if you want
-        ]);
+		$context = \Tekord\Logman\Facades\Logman::getContextWith([
+			// put additional custom context records here if you want
+		]);
 	} catch (\Throwable $e) {
 		$context = [];
 	}
@@ -82,9 +90,9 @@ protected function context() {
 }
 ```
 
-Now if something goes wrong you will see helpful request information in error log files.
+Now if something goes wrong you will see request information in error log files.
 
-### Collect context data before controller's action execution
+### Collect context data for specific controller's action
 
 Add the following code to your controller class:
 
@@ -100,9 +108,3 @@ public function callAction($method, $parameters) {
 	return parent::callAction($method, $parameters);
 }
 ```
-
-### Store context data from Logman for any log
-
-Sometimes you want to put context data into each log record.
-
-TBD
